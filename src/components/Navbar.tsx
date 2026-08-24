@@ -1,6 +1,9 @@
+"use client";
+
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { nav } from "../data/site";
 import { scrollToId } from "../lib/lenis";
 import { EASE_OUT } from "../lib/motion";
@@ -9,16 +12,16 @@ export function Navbar() {
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 40));
 
   // In-page anchors live on the home page; navigate there first if elsewhere.
   const goHash = (hash: string) => {
     setOpen(false);
-    if (location.pathname !== "/") {
-      navigate("/");
+    if (pathname !== "/") {
+      router.push("/");
       setTimeout(() => scrollToId(hash), 350);
     } else {
       scrollToId(hash);
@@ -28,15 +31,15 @@ export function Navbar() {
   // Home / logo: go to the hero section on the home page.
   const goHome = () => {
     setOpen(false);
-    if (location.pathname !== "/") {
-      navigate("/");
+    if (pathname !== "/") {
+      router.push("/");
       setTimeout(() => scrollToId("hero"), 350);
     } else {
       scrollToId("hero");
     }
   };
 
-  const isActive = (to?: string) => !!to && location.pathname === to;
+  const isActive = (to?: string) => !!to && pathname === to;
 
   const underline = (active: boolean) => (
     <span
@@ -83,7 +86,7 @@ export function Navbar() {
               </li>
             ) : item.to ? (
               <li key={item.label}>
-                <Link to={item.to} className={linkClass(isActive(item.to))}>
+                <Link href={item.to} className={linkClass(isActive(item.to))}>
                   {item.label}
                   {underline(isActive(item.to))}
                 </Link>
@@ -141,7 +144,7 @@ export function Navbar() {
                 </button>
               ) : item.to ? (
                 <Link
-                  to={item.to}
+                  href={item.to}
                   onClick={() => setOpen(false)}
                   className="block rounded-xl px-4 py-3 text-[15px] font-medium text-ink hover:bg-black/5"
                 >

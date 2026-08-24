@@ -1,3 +1,5 @@
+"use client";
+
 import { testimonials, assets } from "../data/site";
 import { AnimatedHeading } from "./ui/AnimatedHeading";
 import { Reveal } from "./ui/Reveal";

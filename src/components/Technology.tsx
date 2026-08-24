@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { technology, assets } from "../data/site";
 import { Reveal } from "./ui/Reveal";

@@ -6,9 +6,13 @@ dist/
 dist-ssr/
 build/
 
-# Vite / TS build artifacts
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# TS build artifacts
 *.tsbuildinfo
-vite.config.d.ts
 
 # Logs
 *.log

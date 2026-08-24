@@ -1,3 +1,5 @@
+"use client";
+
 import { Fragment } from "react";
 import { motion } from "framer-motion";
 import { wordContainer, wordChild, viewportOnce } from "../../lib/motion";

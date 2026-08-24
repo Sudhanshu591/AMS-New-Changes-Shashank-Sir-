@@ -1,3 +1,5 @@
+"use client";
+
 // Minimal inline icon set matching the source's line-style glyphs.
 type P = { className?: string };
 const s = (className = "", size = 24) => ({

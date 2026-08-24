@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { security } from "../data/site";
 import { AnimatedHeading } from "./ui/AnimatedHeading";

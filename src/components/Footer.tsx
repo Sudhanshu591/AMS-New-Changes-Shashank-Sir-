@@ -1,4 +1,7 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { footer, assets } from "../data/site";
 import { scrollToId } from "../lib/lenis";
 import { AnimatedHeading } from "./ui/AnimatedHeading";
@@ -6,13 +9,13 @@ import { ArrowUpRight, IconFacebook, IconInstagram, IconYoutube } from "./ui/ico
 
 export function Footer() {
   const social = [IconFacebook, IconInstagram, IconYoutube];
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
 
   // In-page anchors live on the home page; navigate there first if elsewhere.
   const goHash = (hash: string) => {
-    if (location.pathname !== "/") {
-      navigate("/");
+    if (pathname !== "/") {
+      router.push("/");
       setTimeout(() => scrollToId(hash), 350);
     } else {
       scrollToId(hash);
@@ -37,7 +40,7 @@ export function Footer() {
       <div className="grid w-full grid-cols-1 gap-3 lg:grid-cols-2">
         {/* Left white card: brand + newsletter */}
         <div className="flex flex-col rounded-[28px] bg-white p-8 md:p-12">
-          <Link to="/" className="flex items-center gap-2" aria-label="Home">
+          <Link href="/" className="flex items-center gap-2" aria-label="Home">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-lime text-ink">
               <img src="/logo.png" alt="AMS logo" className="h-6 w-6 object-contain" />
             </span>
@@ -68,11 +71,11 @@ export function Footer() {
             <h4 className="font-display text-[22px] font-medium text-ink">Pages</h4>
             <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3">
               {footer.pages.map((p) => {
-                const active = !!p.to && location.pathname === p.to;
+                const active = !!p.to && pathname === p.to;
                 return (
                   <li key={p.label}>
                     {p.to ? (
-                      <Link to={p.to} className={linkClass(active)}>
+                      <Link href={p.to} className={linkClass(active)}>
                         {p.label}
                       </Link>
                     ) : p.hash ? (

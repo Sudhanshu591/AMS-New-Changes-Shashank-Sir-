@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ctaBanner, assets } from "../data/site";
 import { AnimatedHeading } from "./ui/AnimatedHeading";
