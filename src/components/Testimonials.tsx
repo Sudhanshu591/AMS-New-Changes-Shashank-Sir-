@@ -36,7 +36,9 @@ export function Testimonials() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.55)), url(${assets.panorama})`,
+          // Layered: dark overlay on top, then your image, then the CDN panorama
+          // beneath so it still shows until testimonials-bg.jpg is added.
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.55)), url(${assets.testimonialsBg}), url(${assets.panorama})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

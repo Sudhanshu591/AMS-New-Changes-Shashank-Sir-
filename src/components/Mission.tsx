@@ -48,7 +48,7 @@ export function Mission() {
   });
 
   return (
-    <section className="bg-cream py-24 md:py-28">
+    <section className="bg-cream pb-12 pt-10 md:pb-14 md:pt-14">
       <div className="container-x flex flex-col items-center text-center">
         <Reveal>
           <span className="eyebrow">{mission.eyebrow}</span>

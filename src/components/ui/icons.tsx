@@ -145,3 +145,13 @@ export const IconYoutube = ({ className = "" }: P) => (
     <path d="M22 12s0-3-.4-4.4a2.5 2.5 0 00-1.8-1.8C18.4 5.4 12 5.4 12 5.4s-6.4 0-7.8.4A2.5 2.5 0 002.4 7.6C2 9 2 12 2 12s0 3 .4 4.4a2.5 2.5 0 001.8 1.8c1.4.4 7.8.4 7.8.4s6.4 0 7.8-.4a2.5 2.5 0 001.8-1.8C22 15 22 12 22 12zm-12 2.8V9.2l4.8 2.8L10 14.8z" />
   </svg>
 );
+export const IconLinkedin = ({ className = "" }: P) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} width="20" height="20">
+    <path d="M6.94 5A1.94 1.94 0 113 5a1.94 1.94 0 013.94 0zM3.3 8.4h3.3V21H3.3V8.4zm5.5 0h3.16v1.72h.05c.44-.83 1.5-1.72 3.1-1.72 3.32 0 3.93 2.18 3.93 5.02V21h-3.3v-5.9c0-1.4-.02-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V21H8.8V8.4z" />
+  </svg>
+);
+export const IconX = ({ className = "" }: P) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} width="18" height="18">
+    <path d="M18.9 3H21l-6.6 7.6L22 21h-5.6l-4.4-5.7L6.9 21H4.8l7-8.1L2.6 3h5.7l4 5.3L18.9 3zm-1 16h1.5L7.6 4.4H6L17.9 19z" />
+  </svg>
+);

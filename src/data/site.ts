@@ -9,7 +9,7 @@ export const assets = {
   heroVideo: `/hero.mp4`,
   heroVideoFallback: `${CDN}/assets/7fXDqEHIBqWkfaAU7ddHgPqholw.mp4`,
   heroPoster: `${CDN}/images/w9K8ltdxMfkapZKUCjyk8m6Og.jpg?width=1280&height=720`,
-  ctaVideo: `${CDN}/assets/GYCz6Ymt7idciwLxF8zcjDAuRw.mp4`,
+  ctaVideo: `/hero-v2.mp4`,
   ctaPoster: `${CDN}/images/aGYk5EhGaTzvHxXBeBUjpK2yRc.jpg?width=1280&height=720`,
   // Drop your three files in public/ with these exact names to override the gallery.
   mission: [
@@ -18,9 +18,12 @@ export const assets = {
     `/mission-3.png`,
   ],
   industry: `${CDN}/images/hEGOgZnpAPU8I68JZeko7T01Ol0.webp?width=800&height=850`,
-  whyChoose: `${CDN}/images/Gdo42bSmVjrVLILvdyckFnMWik.jpeg?scale-down-to=1024&width=1800&height=2400`,
+  whyChoose: `/why-choose-us.png`,
   techDiagram: `${CDN}/images/4KluVUQuXBnDOWzakyX9efg89w.svg?width=800&height=712`,
-  panorama: `${CDN}/images/nX96g0CuAExorzUDh8oCjPpiBHM.jpg?scale-down-to=2048&width=6106&height=2534`,
+  panorama: `/testimonials-bg.png`,
+  // Testimonials section background. Drop your own file at public/testimonials-bg.png
+  // to override; until then it falls back to the CDN panorama.
+  testimonialsBg: `/testimonials-bg.png`,
   caseStudy1: `${CDN}/images/2JR7oxoJ0fr6iNFrFx4UCG4wuxg.jpg?width=800&height=500`,
   avatars: [
     `${CDN}/images/rvVsRZjAKkiA0nvOxWWVXzG9L6s.jpg?width=120&height=120`,
@@ -28,6 +31,21 @@ export const assets = {
     `${CDN}/images/UY6B0qS4hdcjlEgPYtxTooD5yA.jpg?width=120&height=120`,
     `${CDN}/images/jm0dvrhBRn67BN7gXkLvk9Ymi4.jpg?width=120&height=120`,
     `${CDN}/images/nSZJQpCu25uRO9lrT3cjUnyKmk.jpg?width=120&height=120`,
+  ],
+};
+
+// Trust strip shown under the hero. PLACEHOLDER wordmarks — replace `name`
+// values with real port authorities / terminal operators you can name, or swap
+// the whole array for logo image paths in public/ once you have permission.
+export const trustLogos = {
+  label: "Trusted by port authorities and terminal operators",
+  logos: [
+    "Port Authority",
+    "Marine Terminal",
+    "Harbour Control",
+    "Coastal Ports",
+    "Gateway Terminals",
+    "Maritime Gateway",
   ],
 };
 
@@ -66,8 +84,8 @@ export const industries = {
   tabs: [
     {
       title: "Real-time monitoring",
-      // Drop your own file at public/features/real-time-monitoring.jpg to override.
-      image: `/features/real-time-monitoring.jpg`,
+      // Drop your own file at public/features/real-time-monitoring.png to override.
+      image: `/features/real-time-monitoring.png`,
       imageFallback: `${CDN}/images/hEGOgZnpAPU8I68JZeko7T01Ol0.webp?width=800&height=850`,
       body: "AMS gives control-tower operators a single, live picture of every vessel in the anchorage and berthing areas, fusing AIS, VTMIS and VTS data with AI-driven decision support.",
       points: [
@@ -79,7 +97,7 @@ export const industries = {
     },
     {
       title: "Occupancy management",
-      image: `/features/occupancy-management.jpg`,
+      image: `/features/occupancy-management.png`,
       imageFallback: `${CDN}/images/Gdo42bSmVjrVLILvdyckFnMWik.jpeg?scale-down-to=1024&width=1800&height=2400`,
       body: "Predict and plan how anchorage and berth space is used, hours or days ahead, so operators can maximise throughput without compromising safety margins.",
       points: [
@@ -91,7 +109,7 @@ export const industries = {
     },
     {
       title: "Anchorage assignment",
-      image: `/features/anchorage-assignment.jpg`,
+      image: `/features/anchorage-assignment.png`,
       imageFallback: `${CDN}/images/nX96g0CuAExorzUDh8oCjPpiBHM.jpg?scale-down-to=2048&width=6106&height=2534`,
       body: "Assign vessels to the safest, most efficient anchorage automatically, accounting for draft, size, cargo type and weather, with full manual override.",
       points: [
@@ -103,7 +121,7 @@ export const industries = {
     },
     {
       title: "Berthing management",
-      image: `/features/berthing-management.jpg`,
+      image: `/features/berthing-management.png`,
       imageFallback: `${CDN}/images/2JR7oxoJ0fr6iNFrFx4UCG4wuxg.jpg?width=800&height=500`,
       body: "Coordinate berth allocation, arrivals and departures end to end, reducing waiting time and turnaround while keeping every stakeholder in sync.",
       points: [
@@ -115,7 +133,7 @@ export const industries = {
     },
     {
       title: "Safety & compliance",
-      image: `/features/safety-compliance.jpg`,
+      image: `/features/safety-compliance.png`,
       imageFallback: `${CDN}/images/hEGOgZnpAPU8I68JZeko7T01Ol0.webp?width=800&height=850`,
       body: "Enforce safety zones, collision-avoidance rules and regulatory requirements automatically, with a complete audit trail for every decision.",
       points: [
@@ -127,7 +145,7 @@ export const industries = {
     },
     {
       title: "Analytics & reporting",
-      image: `/features/analytics-reporting.jpg`,
+      image: `/features/analytics-reporting.png`,
       imageFallback: `${CDN}/images/Gdo42bSmVjrVLILvdyckFnMWik.jpeg?scale-down-to=1024&width=1800&height=2400`,
       body: "Turn operational data into insight with dashboards, KPIs and exportable reports that reveal how your anchorage and berths really perform.",
       points: [
@@ -139,7 +157,7 @@ export const industries = {
     },
     {
       title: "Alerts & notifications",
-      image: `/features/alerts-notifications.jpg`,
+      image: `/features/alerts-notifications.png`,
       imageFallback: `${CDN}/images/nX96g0CuAExorzUDh8oCjPpiBHM.jpg?scale-down-to=2048&width=6106&height=2534`,
       body: "Keep the right people informed the moment something matters, from safety breaches to schedule changes, across the channels teams already use.",
       points: [
@@ -151,7 +169,7 @@ export const industries = {
     },
     {
       title: "System integration",
-      image: `/features/system-integration.jpg`,
+      image: `/features/system-integration.png`,
       imageFallback: `${CDN}/images/2JR7oxoJ0fr6iNFrFx4UCG4wuxg.jpg?width=800&height=500`,
       body: "Connect AMS to the systems you already run, including AIS, VTMIS, VTS and port community systems, through open, standards-based interfaces.",
       points: [
@@ -162,6 +180,29 @@ export const industries = {
       ],
     },
   ],
+};
+
+// Before / after anchorage optimization showcase. The schematic port plan and
+// vessel positions are drawn in code (see VesselOptimization.tsx) — this object
+// holds only the copy and the headline stats, so it's safe to edit here.
+export const vesselOptimization = {
+  eyebrow: "The AMS difference",
+  title: "Optimizing vessel positioning across the whole anchorage",
+  accent: ["Optimizing", "positioning"],
+  subtitle:
+    "The same vessels, the same anchorage — repositioned. AMS packs vessels safely and efficiently, freeing usable water and cutting congestion without adding a single berth.",
+  before: {
+    label: "Before",
+    caption: "Actual vessel placement",
+    note: "Vessels scattered across the basin — wasted water, higher collision risk, longer waits.",
+    image: "/optimization-before.png",
+  },
+  after: {
+    label: "After",
+    caption: "Optimized vessel placement",
+    note: "AI-assigned positions keep vessels compact and safe, opening the basin for more traffic.",
+    image: "/optimization-after.png",
+  },
 };
 
 export const services = {
@@ -203,8 +244,11 @@ export const services = {
   ],
 };
 
-// Product UI showcase. Drop your real screenshots in public/ with these names
-// (screenshot-1.png … screenshot-3.png); until then the CDN `fallback` renders.
+// Product UI showcase. Self-contained local placeholder mockups live in public/
+// as screenshot-1.svg … screenshot-5.svg. To use real screenshots, drop your own
+// files at those paths (any web image format) — `src` is tried first and falls
+// back to the bundled SVG, so nothing ever renders broken and there is no
+// external CDN dependency.
 export const screenshots = {
   eyebrow: "Product tour",
   title: "See the AMS control tower in action",
@@ -212,29 +256,29 @@ export const screenshots = {
     "One live workspace for your whole anchorage: tracking, prediction and assignment in a single view.",
   shots: [
     {
+      label: "Vessel playback",
+      src: "/screenshots/vessel-playback.png",
+      fallback: "/screenshot-4.svg",
+    },
+    {
       label: "Live anchorage map",
-      src: "/screenshot-1.png",
-      fallback: `${CDN}/images/nX96g0CuAExorzUDh8oCjPpiBHM.jpg?scale-down-to=2048&width=6106&height=2534`,
+      src: "/screenshots/anchorage-map.png",
+      fallback: "/screenshot-1.svg",
     },
     {
       label: "Occupancy prediction",
-      src: "/screenshot-2.png",
-      fallback: `${CDN}/images/hEGOgZnpAPU8I68JZeko7T01Ol0.webp?width=800&height=850`,
+      src: "/screenshots/occupancy.png",
+      fallback: "/screenshot-2.svg",
     },
     {
-      label: "Berth assignment",
-      src: "/screenshot-3.png",
-      fallback: `${CDN}/images/2JR7oxoJ0fr6iNFrFx4UCG4wuxg.jpg?width=800&height=500`,
+      label: "eVessel tracking",
+      src: "/screenshots/vessel-tracking.png",
+      fallback: "/screenshot-3.svg",
     },
     {
-      label: "Anomaly alerts",
-      src: "/screenshot-4.png",
-      fallback: `${CDN}/images/Gdo42bSmVjrVLILvdyckFnMWik.jpeg?scale-down-to=1024&width=1800&height=2400`,
-    },
-    {
-      label: "Historical playback",
-      src: "/screenshot-5.png",
-      fallback: `${CDN}/images/gEUUTpbdoYlnFmF72D8qaN4JZQ8.jpg?scale-down-to=1024&width=1800&height=2400`,
+      label: "Alerts & notifications",
+      src: "/screenshots/alerts.png",
+      fallback: "/screenshot-5.svg",
     },
   ],
 };
@@ -462,58 +506,57 @@ export const security = {
   ],
 };
 
-// NOTE: pricing figures below are placeholders — replace with your real commercial tiers.
+// Enterprise editions — no public list pricing. Port authorities procure via
+// proposal/tender, so every edition routes to sales. Feature scoping is real;
+// commercials are handled in the proposal.
 export const pricing = {
-  eyebrow: "Pricing",
-  title: "Plans that scale with your port",
+  eyebrow: "Editions",
+  title: "A deployment model that scales with your port",
   subtitle:
-    "Transparent, subscription-based pricing. Start with a single anchorage and grow to full port-authority coverage.",
+    "From a single terminal to a national multi-port network. Pricing is tailored to your scale, deployment and SLA — request a proposal and our team will scope it with you.",
   plans: [
     {
-      name: "Starter",
-      price: "$1,500",
-      period: "/month",
-      tagline: "For single-anchorage operations getting started.",
-      cta: "Request a demo",
+      name: "Single Terminal",
+      scale: "One anchorage / terminal",
+      tagline: "For a single anchorage or terminal getting to a live control tower.",
+      cta: "Request a proposal",
       featured: false,
       features: [
-        "Up to 100 vessels tracked live",
-        "Real-time monitoring dashboard",
+        "Real-time vessel monitoring dashboard",
         "AIS data integration",
         "Standard reporting & exports",
-        "Email support",
+        "Cloud or on-prem deployment",
+        "Business-hours support & onboarding",
       ],
     },
     {
-      name: "Professional",
-      price: "$3,900",
-      period: "/month",
-      tagline: "For busy multi-berth ports that need prediction.",
-      cta: "Request a demo",
+      name: "Multi-Berth Port",
+      scale: "Full port operation",
+      tagline: "For busy multi-berth ports that need prediction and assignment.",
+      cta: "Request a proposal",
       featured: true,
       features: [
-        "Up to 500 vessels tracked live",
+        "Everything in Single Terminal",
         "AI-predicted occupancy & ETAs",
         "Intelligent anchorage & berth assignment",
         "AIS, VTMIS & VTS integration",
         "Heat maps & advanced analytics",
-        "Priority support & onboarding",
+        "Priority support, onboarding & SLA",
       ],
     },
     {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      tagline: "For port authorities with full-scale operations.",
+      name: "Port Authority Network",
+      scale: "Multi-port / national",
+      tagline: "For port authorities running full-scale, multi-port operations.",
       cta: "Talk to sales",
       featured: false,
       features: [
-        "Unlimited vessels & multi-port",
-        "On-prem or private-cloud deployment",
-        "Custom integrations & workflows",
-        "Dedicated success manager & SLA",
+        "Everything in Multi-Berth Port",
+        "Unlimited vessels & multi-port coverage",
+        "On-prem, private-cloud or air-gapped deployment",
+        "Custom integrations, workflows & data residency",
         "Single sign-on & advanced RBAC",
-        "24/7 support",
+        "Dedicated success manager, 24/7 support & SLA",
       ],
     },
   ],
@@ -572,8 +615,14 @@ export const footer = {
   ] as { label: string; to?: string; hash?: string }[],
   address: [
     "SDLC Corp, Dubai, United Arab Emirates",
-    "Port of Fujairah, Fujairah, United Arab Emirates",
+    "2457 Kane Lane, Batavia, Illinois 60510, USA",
   ],
-  email: "hello@sdlccorp.com",
-  phone: "+971 4 000 0000",
+  email: "sales@sdlccorp.com",
+  phone: "+1 510 630 6507",
+  social: [
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/sdlccorp", icon: "linkedin" },
+    { label: "X", href: "https://x.com/sdlccorp", icon: "x" },
+    { label: "Instagram", href: "https://www.instagram.com/sdlccorp", icon: "instagram" },
+    { label: "YouTube", href: "https://www.youtube.com/@sdlccorp", icon: "youtube" },
+  ],
 };

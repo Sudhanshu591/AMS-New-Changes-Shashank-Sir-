@@ -54,7 +54,7 @@ export function Industries() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="solution" className="bg-cream py-24 md:py-28">
+    <section id="solution" className="bg-cream pb-24 pt-12 md:pb-28 md:pt-14">
       <div className="container-x">
         <Reveal>
           <span className="eyebrow">{industries.eyebrow}</span>

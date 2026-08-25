@@ -106,9 +106,12 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <a href="#" className="btn-ghost hidden sm:inline-flex">
-            Log in
-          </a>
+          <button
+            onClick={() => goHash("contact")}
+            className="btn-ghost hidden sm:inline-flex"
+          >
+            Talk to sales
+          </button>
           <button onClick={() => goHash("contact")} className="btn-lime">
             Request a demo
           </button>
@@ -161,13 +164,12 @@ export function Navbar() {
             </li>
           ))}
           <li>
-            <a
-              href="#"
-              onClick={() => setOpen(false)}
-              className="block rounded-xl px-4 py-3 text-[15px] font-medium text-ink hover:bg-black/5 sm:hidden"
+            <button
+              onClick={() => goHash("contact")}
+              className="block w-full rounded-xl px-4 py-3 text-left text-[15px] font-medium text-ink hover:bg-black/5 sm:hidden"
             >
-              Log in
-            </a>
+              Talk to sales
+            </button>
           </li>
         </motion.ul>
       )}

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Hero } from "../components/Hero";
+import { Trust } from "../components/Trust";
 import { Mission } from "../components/Mission";
 import { Industries } from "../components/Industries";
 import { Services } from "../components/Services";
+import { VesselOptimization } from "../components/VesselOptimization";
 import { Screenshots } from "../components/Screenshots";
 import { WhyChooseUs } from "../components/WhyChooseUs";
 import { Metrics } from "../components/Metrics";
@@ -41,9 +43,11 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Hero />
+      <Trust />
       <Mission />
       <Industries />
       <Services />
+      <VesselOptimization />
       <Screenshots />
       <WhyChooseUs />
       <Metrics />

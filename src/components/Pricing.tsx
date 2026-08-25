@@ -47,10 +47,19 @@ export function Pricing() {
               >
                 {featured && (
                   <span className="absolute right-6 top-6 rounded-pill bg-ink px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] text-lime">
-                    Most popular
+                    Recommended
                   </span>
                 )}
-                <h3 className="font-display text-[22px] font-medium">{plan.name}</h3>
+                <span
+                  className={`inline-flex w-fit items-center rounded-pill px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] ${
+                    featured
+                      ? "bg-ink/10 text-ink/70"
+                      : "border border-white/15 text-white/55"
+                  }`}
+                >
+                  {plan.scale}
+                </span>
+                <h3 className="mt-5 font-display text-[24px] font-medium">{plan.name}</h3>
                 <p
                   className={`mt-2 text-[14px] leading-relaxed ${
                     featured ? "text-ink/70" : "text-white/60"
@@ -58,21 +67,6 @@ export function Pricing() {
                 >
                   {plan.tagline}
                 </p>
-
-                <div className="mt-8 flex items-end gap-1">
-                  <span className="font-display text-[44px] font-medium leading-none">
-                    {plan.price}
-                  </span>
-                  {plan.period && (
-                    <span
-                      className={`pb-1 text-[15px] ${
-                        featured ? "text-ink/60" : "text-white/50"
-                      }`}
-                    >
-                      {plan.period}
-                    </span>
-                  )}
-                </div>
 
                 <a
                   href="#contact"

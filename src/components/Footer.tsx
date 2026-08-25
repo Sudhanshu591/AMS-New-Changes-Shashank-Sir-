@@ -5,10 +5,16 @@ import { usePathname, useRouter } from "next/navigation";
 import { footer, assets } from "../data/site";
 import { scrollToId } from "../lib/lenis";
 import { AnimatedHeading } from "./ui/AnimatedHeading";
-import { ArrowUpRight, IconFacebook, IconInstagram, IconYoutube } from "./ui/icons";
+import { ArrowUpRight, IconInstagram, IconLinkedin, IconX, IconYoutube } from "./ui/icons";
+
+const SOCIAL_ICONS = {
+  linkedin: IconLinkedin,
+  x: IconX,
+  instagram: IconInstagram,
+  youtube: IconYoutube,
+} as const;
 
 export function Footer() {
-  const social = [IconFacebook, IconInstagram, IconYoutube];
   const router = useRouter();
   const pathname = usePathname();
 
@@ -122,16 +128,21 @@ export function Footer() {
           <div className="border-t border-dashed border-black/15 pt-8">
             <h4 className="font-display text-[22px] font-medium text-ink">Social media</h4>
             <div className="mt-5 flex gap-4 text-ink">
-              {social.map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="transition-transform hover:-translate-y-1"
-                  aria-label="Social link"
-                >
-                  <Icon />
-                </a>
-              ))}
+              {footer.social.map((s) => {
+                const Icon = SOCIAL_ICONS[s.icon as keyof typeof SOCIAL_ICONS];
+                return (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:-translate-y-1"
+                    aria-label={s.label}
+                  >
+                    <Icon />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
