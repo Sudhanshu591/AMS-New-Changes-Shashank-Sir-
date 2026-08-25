@@ -11,7 +11,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number>(0);
 
   return (
-    <section id="faq" className="bg-cream py-24 md:py-28">
+    <section id="faq" className="bg-cream py-16 md:py-20">
       <div className="container-x grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         {/* Left heading */}
         <div>

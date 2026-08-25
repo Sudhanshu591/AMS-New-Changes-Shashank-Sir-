@@ -9,7 +9,7 @@ import { stagger, fadeUp, viewportOnce } from "../lib/motion";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="bg-ink py-24 text-white md:py-28">
+    <section id="pricing" className="bg-ink py-16 text-white md:py-20">
       <div className="container-x flex flex-col items-center text-center">
         <Reveal>
           <span className="eyebrow eyebrow-dark">{pricing.eyebrow}</span>

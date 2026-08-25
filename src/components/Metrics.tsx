@@ -17,7 +17,7 @@ const iconMap: Record<string, (p: { className?: string }) => JSX.Element> = {
 
 export function Metrics() {
   return (
-    <section className="bg-cream py-20 md:py-24">
+    <section className="bg-cream py-16 md:py-20">
       <div className="container-x flex flex-col items-center text-center">
         <Reveal>
           <span className="eyebrow">{metrics.eyebrow}</span>

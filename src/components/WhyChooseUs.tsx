@@ -8,7 +8,7 @@ import { stagger, fadeUp, viewportOnce } from "../lib/motion";
 
 export function WhyChooseUs() {
   return (
-    <section className="bg-cream py-24 md:py-28">
+    <section className="bg-cream py-16 md:py-20">
       <div className="container-x">
         <Reveal>
           <span className="eyebrow">{whyChoose.eyebrow}</span>

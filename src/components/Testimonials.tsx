@@ -31,7 +31,7 @@ export function Testimonials() {
   const rowB = [...testimonials.items.slice().reverse(), ...testimonials.items.slice().reverse()];
 
   return (
-    <section className="relative overflow-hidden py-24 md:py-28">
+    <section className="relative overflow-hidden py-16 md:py-20">
       {/* Nature photo background */}
       <div
         className="absolute inset-0"

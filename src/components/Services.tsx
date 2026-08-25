@@ -43,7 +43,7 @@ export function Services() {
   };
 
   return (
-    <section className="bg-ink py-24 text-white md:py-28">
+    <section className="bg-ink py-16 text-white md:py-20">
       <div className="container-x">
         <Reveal>
           <span className="eyebrow eyebrow-dark">{services.eyebrow}</span>

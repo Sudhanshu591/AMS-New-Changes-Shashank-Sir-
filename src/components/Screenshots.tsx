@@ -12,7 +12,7 @@ export function Screenshots() {
   const shot = screenshots.shots[active];
 
   return (
-    <section id="product-tour" className="bg-cream py-24 md:py-28">
+    <section id="product-tour" className="bg-cream py-16 md:py-20">
       <div className="container-x flex flex-col items-center text-center">
         <Reveal>
           <span className="eyebrow">{screenshots.eyebrow}</span>
@@ -65,7 +65,8 @@ export function Screenshots() {
                   src={shot.src}
                   onError={(e) => {
                     const img = e.currentTarget;
-                    if (img.src !== shot.fallback) img.src = shot.fallback;
+                    img.onerror = null; // guard against a loop if the fallback also fails
+                    if (shot.fallback) img.src = shot.fallback;
                   }}
                   alt={shot.label}
                   initial={{ opacity: 0, scale: 1.02 }}

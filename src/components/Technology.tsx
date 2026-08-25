@@ -8,7 +8,7 @@ import { stagger, fadeUp, viewportOnce } from "../lib/motion";
 
 export function Technology() {
   return (
-    <section className="bg-cream py-24 md:py-28">
+    <section className="bg-cream py-16 md:py-20">
       <div className="container-x grid grid-cols-1 gap-14 lg:grid-cols-2 lg:items-center">
         {/* Left copy */}
         <div>

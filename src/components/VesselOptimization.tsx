@@ -55,7 +55,7 @@ const LIME = "#7EEA57";
 
 export function VesselOptimization() {
   return (
-    <section id="optimization" className="bg-ink py-24 text-white md:py-28">
+    <section id="optimization" className="bg-ink py-16 text-white md:py-20">
       <div className="container-x">
         <div className="flex flex-col items-center text-center">
           <Reveal>

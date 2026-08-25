@@ -8,7 +8,7 @@ import { stagger, fadeUp, viewportOnce } from "../lib/motion";
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-ink py-24 text-white md:py-28">
+    <section id="how-it-works" className="bg-ink py-16 text-white md:py-20">
       <div className="container-x">
         <Reveal>
           <span className="eyebrow eyebrow-dark">{howItWorks.eyebrow}</span>
