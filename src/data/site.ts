@@ -5,8 +5,8 @@
 const CDN = "https://framerusercontent.com";
 
 export const assets = {
-  // Drop your own file at public/hero.mp4 — it plays first; the CDN clip is the fallback.
-  heroVideo: `/hero.mp4`,
+  // New anchored-ships hero clip; the CDN clip is the fallback.
+  heroVideo: `/watermark-removed-Ten_anchored_ships_in_ocean_202608251524.mp4`,
   heroVideoFallback: `${CDN}/assets/7fXDqEHIBqWkfaAU7ddHgPqholw.mp4`,
   heroPoster: `${CDN}/images/w9K8ltdxMfkapZKUCjyk8m6Og.jpg?width=1280&height=720`,
   ctaVideo: `/hero-v2.mp4`,
